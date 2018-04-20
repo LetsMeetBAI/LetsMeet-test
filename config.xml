@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="io.cordova.hellocordova" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>HelloCordova</name>
+    <name>LetsMeet app</name>
     <description>
         A sample Apache Cordova application that responds to the deviceready event.
     </description>
@@ -30,6 +30,10 @@
     <plugin name="cordova-universal-links-plugin" spec="^1.2.1" />
     <plugin name="cordova-plugin-browsertab" spec="^0.2.0" />
     <plugin name="cordova-plugin-inappbrowser" spec="^3.0.0" />
+	<gap:plugin name="com.phonegap.plugins.facebookconnect" version="<0.8.0">
+	<param name="APP_ID" value="1583806705075141" />
+    <param name="APP_NAME" value="<LetsMeet" />
+    </gap:plugin>
 	<universal-links>
     <host name="https://yn232.app.goo.gl" scheme="https" />
     <host name="letmeet-bai.firebaseapp.com" scheme="https">
