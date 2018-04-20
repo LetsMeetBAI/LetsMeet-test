@@ -167,6 +167,46 @@ function register(){
 
 }
 function facelogin(){
+	FB.init({
+    appId      : '1583806705075141',
+    cookie     : true,
+    xfbml      : true,
+    version    : 'v2.6'
+    });     
+	
+	FB.Event.subscribe('auth.authResponseChange', checkLoginState);
+	function checkLoginState(event) {
+  if (event.authResponse) {
+    // User is signed-in Facebook.
+    var unsubscribe = firebase.auth().onAuthStateChanged(function(firebaseUser) {
+      unsubscribe();
+      // Check if we are already signed-in Firebase with the correct user.
+      if (!isUserEqual(event.authResponse, firebaseUser)) {
+        // Build Firebase credential with the Facebook auth token.
+        var credential = firebase.auth.FacebookAuthProvider.credential(
+            event.authResponse.accessToken);
+        // Sign in with the credential from the Facebook user.
+        firebase.auth().signInWithCredential(credential).catch(function(error) {
+          // Handle Errors here.
+          var errorCode = error.code;
+          var errorMessage = error.message;
+          // The email of the user's account used.
+          var email = error.email;
+          // The firebase.auth.AuthCredential type that was used.
+          var credential = error.credential;
+          // ...
+        });
+      } else {
+        // User is already signed-in Firebase with the correct user.
+      }
+    });
+  } else {
+    // User is signed-out of Facebook.
+    firebase.auth().signOut();
+  }
+}
+}
+function facelogin1(){
 	var provider = new firebase.auth.FacebookAuthProvider();
 	firebase.auth().signInWithPopup(provider).then(function(result) {
   var token = result.credential.accessToken;
