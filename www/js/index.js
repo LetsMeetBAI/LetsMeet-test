@@ -187,28 +187,26 @@ function facelogin(){
       // Check if we are already signed-in Firebase with the correct user.
       if (!isUserEqual(event.authResponse, firebaseUser)) {
         // Build Firebase credential with the Facebook auth token.
-        var credential = firebase.auth.FacebookAuthProvider.credential(
-            event.authResponse.accessToken);
-        // Sign in with the credential from the Facebook user.
-        firebase.auth().signInWithCredential(credential).catch(function(error) {
-          // Handle Errors here.
-          var errorCode = error.code;
-          var errorMessage = error.message;
-          // The email of the user's account used.
-          var email = error.email;
-          // The firebase.auth.AuthCredential type that was used.
-          var credential = error.credential;
-          // ...
-        });
-      } else {
-        // User is already signed-in Firebase with the correct user.
-      }
-    });
-  } else {
+        var credential = firebase.auth.FacebookAuthProvider.credential(access_token);
+
+		// Sign in with credential from the Google user.
+		firebase.auth().signInWithCredential(credential).catch(function(error) {
+		// Handle Errors here.
+		var errorCode = error.code;
+		var errorMessage = error.message;
+		// The email of the user's account used.
+		var email = error.email;
+		// The firebase.auth.AuthCredential type that was used.
+		var credential = error.credential;
+		// ...
+		});
+    }
+  })} else {
     // User is signed-out of Facebook.
     firebase.auth().signOut();
   }
 }
+
 }
 function facelogin1(){
 	var provider = new firebase.auth.FacebookAuthProvider();
