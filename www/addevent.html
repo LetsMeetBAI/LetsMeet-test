@@ -1,0 +1,50 @@
+<html>
+<head>
+		<script src="https://www.gstatic.com/firebasejs/4.12.1/firebase-app.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/4.12.1/firebase-auth.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/4.12.1/firebase-database.js"></script>
+		<meta http-equiv="Content-Security-Policy" content="script-src * data: https://ssl.gstatic.com 'unsafe-inline' 'unsafe-eval'">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+	
+		<title>LetsMeet</title>
+        <link rel="stylesheet" type="text/css" href="css/index.css">
+		<link rel="manifest" href="/manifest.json">
+</head>
+<body>
+  <script src="index.js"></script>
+  <div id="login_div" class="main-div">
+    <h3>Let's Meet!</h3>
+    <button id="tologinbtn">Login to Account</button>
+  </div>
+	<div id="user_div" class="loggedin-div">
+    <h3>Lets Meet!</h3>
+	<p id="user_para"></p>
+	
+	<h4></h4>
+	<input type="text" placeholder="Nazwa użytkownika" id="event_user"  />
+	<p></p>
+	<input type="text" placeholder="Tytuł wydarzenia" id="event_name" />
+	<p></p>
+	Ważne od...<input type="datetime-local"  id="event_from" />
+	<p></p>
+	Ważne do...<input type="datetime-local"  id="event_until" />
+	<p></p>
+	<textarea rows="4" cols="50" placeholder="Krótki opis" id="event_text" /></textarea>
+	<p></p>
+	<input type="text" placeholder="Lokalizacja" id="event_location" />
+	<p></p>
+	<input type="text" placeholder="Link do wydarzenia" id="event_link" />
+	<p></p>
+	<button onclick="addevent()">Zapisz Wydarzenie</button>
+	<p></p>
+	<button onclick="toindexpage()">Wstecz</button>
+	<p></p>
+	<p></p>
+	<button onclick="logout()">Logout</button>
+	</div>
+</body>
+</html>
