@@ -30,10 +30,6 @@
     <plugin name="cordova-universal-links-plugin" spec="^1.2.1" />
     <plugin name="cordova-plugin-browsertab" spec="^0.2.0" />
     <plugin name="cordova-plugin-inappbrowser" spec="^3.0.0" />
-	<plugin name="com.phonegap.plugins.facebookconnect" spec="0.4.0" source="pgb">
-	<param name="APP_ID" value="1583806705075141" />
-    <param name="APP_NAME" value="LetsMeet" />
-    </plugin>
 	<universal-links>
     <host name="https://yn232.app.goo.gl" scheme="https" />
     <host name="letmeet-bai.firebaseapp.com" scheme="https">
