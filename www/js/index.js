@@ -165,6 +165,10 @@ function register(){
     window.alert("Error : " + errorMessage);
   });
 
+}function checkLoginState() {
+  FB.getLoginStatus(function(response) {
+    statusChangeCallback(response);
+  });
 }
 function facelogin(){
 	FB.init({
