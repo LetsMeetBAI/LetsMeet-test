@@ -31,6 +31,7 @@
 		<script src="https://www.gstatic.com/firebasejs/4.12.1/firebase-app.js"></script>
 		<script src="https://www.gstatic.com/firebasejs/4.12.1/firebase-auth.js"></script>
 		<script src="https://www.gstatic.com/firebasejs/4.12.1/firebase-database.js"></script>
+		<script src="//connect.facebook.net/en_US/sdk.js"></script>
 		<meta http-equiv="Content-Security-Policy" content="script-src * data: https://ssl.gstatic.com 'unsafe-inline' 'unsafe-eval'">
         <meta name="format-detection" content="telephone=no">
         <meta name="msapplication-tap-highlight" content="no">
@@ -62,6 +63,8 @@
 	<button id="googloginbtn">Google Account</button>
 	<p></p>
 	<button id="faceloginbtn">Facebook Login</button>
+	<p></p>
+	<fb:login-button data-auto-logout-link="true" scope="public_profile,email" size="large"></fb:login-button>
   </div>
   
   <div id="user_div" class="loggedin-div">
