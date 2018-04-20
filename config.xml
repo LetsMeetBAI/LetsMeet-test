@@ -32,7 +32,7 @@
     <plugin name="cordova-plugin-inappbrowser" spec="^3.0.0" />
 	<gap:plugin name="cordova-plugin-facebookconnect-orlando" source="npm" >
 	<param name="APP_ID" value="1583806705075141" />
-    <param name="APP_NAME" value="<LetsMeet" />
+    <param name="APP_NAME" value="LetsMeet" />
     </gap:plugin>
 	<universal-links>
     <host name="https://yn232.app.goo.gl" scheme="https" />
